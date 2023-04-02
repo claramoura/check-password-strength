@@ -14,7 +14,7 @@ Checks whether a password is valid given a list of rules.
 
 Send a POST request with a GraphQL query to http://localhost:8080/graphql containing the password and list of rules.
 
-### Example:
+### Example 1 (invalid password):
 
 ```
 Request:
@@ -42,6 +42,36 @@ Response:
                 "noRepeated",
                 "minDigit"
             ]
+        }
+    }
+}
+```
+
+### Example 2 (valid password):
+
+```
+Request:
+
+query {
+    verify(password: "UhsgTjas!hBeJ9573%", rules: [
+      {rule: "minSize", value: 8},
+      {rule: "minSpecialChars", value: 2},
+      {rule: "noRepeated", value: 0},
+      {rule: "minDigit", value: 4}
+    ])  {
+         verify
+         noMatch
+    }
+}
+```
+```
+Response:
+
+{
+    "data": {
+        "verify": {
+            "verify": true,
+            "noMatch": []
         }
     }
 }
