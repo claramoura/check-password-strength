@@ -1,7 +1,5 @@
 # check-password-strength
-Checks the strength of a password given a list of rules
-
-This program checks whether a given password is valid given a list of rules.
+Checks whether a given password is valid given a list of rules.
 
 Options:
 
