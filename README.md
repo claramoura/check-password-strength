@@ -17,6 +17,8 @@ Send a POST request with a GraphQL query to http://localhost:8080/graphql contai
 ### Example:
 
 ```
+Request:
+
 query {
     verify(password: "IsPasswordStrong!123&", rules: [
       {rule: "minSize", value: 8},
@@ -29,3 +31,18 @@ query {
     }
 }
 ```
+```
+Response:
+
+{
+    "data": {
+        "verify": {
+            "verify": false,
+            "noMatch": [
+                "noRepeated",
+                "minDigit"
+            ]
+        }
+    }
+}
+``` 
