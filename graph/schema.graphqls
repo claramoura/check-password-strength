@@ -1,0 +1,17 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+input Rule {
+  rule: String!
+  value: Int!
+}
+
+type Verify {
+  verify: Boolean!
+  noMatch: [String]!
+}
+
+type Query {
+  verify(password: String!, rules: [Rule]!): Verify
+}
