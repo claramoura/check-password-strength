@@ -1,5 +1,5 @@
 # check-password-strength
-Checks whether a given password is valid given a list of rules.
+Checks whether a password is valid given a list of rules.
 
 Options:
 
